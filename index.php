@@ -41,14 +41,21 @@
 			 </div>
 	 </form>
   <div id="userCards">
-   
+   <h2>Your card</h2>
   </div>
   <div id="computerCards">
+   <h2>Computer's card</h2>
+  </div>
+  <div id="result">
    
   </div>
 	</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src="script.js"></script>
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="mvc-model.js"></script>
+<script type="text/javascript">
+//Test output
+</script>
 </body>
 </html>
