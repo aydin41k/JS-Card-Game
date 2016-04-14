@@ -54,6 +54,7 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="script.js"></script>
 <script type="text/javascript" src="mvc-model.js"></script>
+<script type="text/javascript" src="mvc-view.js"></script>
 <script type="text/javascript">
 //Test output
 </script>
