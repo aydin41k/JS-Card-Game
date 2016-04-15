@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
       <meta charset="utf-8">
@@ -13,50 +12,51 @@
      </title>
 </head>
 <body>
-	<div class="container">
-	 <div class="jumbotron text-center">
-	  <h1>Card Game</h1>
-	  <h2>Try your luck in cards against the mighty computer!</h2>
-	 </div>
-	 <form class="form-horizontal" role="form">
-			 <div class="form-group">
-			  <div class="col-sm-4 col-sm-offset-2">
-			  <label for="cardCount" class="control-label">How many cards do you want to deal?</label>
-			  </div>
-			  <div class="col-sm-2">
-			   <select class="form-control" id="cardCount" disabled>
-			    <?php
-			     for( $i=1;$i<5;$i++ ) {
-			       echo '<option>'.$i.'</option>';
-			     }
-			    ?>
-			   </select>
-			   <code>Defunct for now.</code>
-			  </div>
-			 </div>
-			 <div class="form-group">
-			  <div class="col-sm-1 col-sm-offset-2">
-			   <input type="button" class="form-control btn btn-success" value="Start" onClick="start();">
-			  </div>
-			 </div>
-	 </form>
-  <div id="userCards">
-   <h2>Your card</h2>
-  </div>
-  <div id="computerCards">
-   <h2>Computer's card</h2>
-  </div>
-  <div id="result">
-   
-  </div>
-	</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="script.js"></script>
-<script type="text/javascript" src="mvc-model.js"></script>
-<script type="text/javascript" src="mvc-view.js"></script>
-<script type="text/javascript">
-//Test output
-</script>
+   <div class="container">
+     <div class="jumbotron text-center">
+       <h1>Card Game</h1>
+       <h2>Try your luck in cards against the mighty computer!</h2>
+     </div>
+     <form class="form-horizontal" role="form">
+  			 <div class="form-group">
+  			  <div class="col-sm-4 col-sm-offset-2">
+  			  <label for="cardCount" class="control-label">How many cards do you want to deal?</label>
+  			  </div>
+  			  <div class="col-sm-2">
+  			   <select class="form-control" id="cardCount">
+  			    <?php
+  			     for( $i=1;$i<=3;$i++ ) {
+  			       echo '<option>'.$i.'</option>';
+  			     }
+  			     echo '<option selected>4</option>';
+  			    ?>
+  			   </select>
+  			  </div>
+  			 </div>
+  			 <div class="form-group">
+  			  <div class="col-sm-1 col-sm-offset-2">
+  			   <input id="startButton" type="button" class="btn btn-success" value="Start" onClick="start();">
+  			  </div>
+  			 </div>
+    </form>
+    <div id="userCards" class="row">
+      <div class="col-sm-12 text-center handContainer">
+        <h2>Your hand</h2>
+      </div>
+    </div>
+    <div id="computerCards" class="row">
+     <div class="col-sm-12 text-center handContainer">
+       <h2>Computer&#39;s hand</h2>
+     </div>
+    </div>
+    <div id="result" class="row text-center">
+    </div>
+   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="mvc-model.js"></script>
+  <script type="text/javascript" src="mvc-view.js"></script>
+  <script type="text/javascript" src="mvc-controller.js"></script>
 </body>
 </html>

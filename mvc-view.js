@@ -1,28 +1,32 @@
-// on Start();
+function dealBlank(player,cardLimit,colOffset) {
+  var target = '#'+player+'Cards';
+  $(target).append('<div class="col-sm-'+colOffset+'"></div>');
+  for( i=1; i<=cardLimit; i++ ) {
+    $(target).append('<div id="'+player+'Card'+i+'" class="col-sm-2"><img src="img/blank.png" class="card" /></div>');
+    }
+}
 
-//My hand
-  var myHand = new deal();
-  $('#userCards').html(function() {
-    $(this).append('<img src="img/'+myHand.type+'of'+myHand.suit+'.png" class="card" />');
-    $(this).append('Value: '+myHand.value);
-   }
-  );
-//Comp's hand
-  var compHand = new deal();
-  $('#computerCards').html(function() {
-    $(this).append('<img src="img/'+compHand.type+'of'+compHand.suit+'.png" class="card" />');
-    $(this).append('Value: '+compHand.value);    
-  });
+function distribute(player,cardLimit) {
+  for(i=1;i<=cardLimit;i++) {
+    var hand = new deal();
+    target = '#'+player+'Card'+i;
+// INSERT CODE TO DELAY DEALING ON TOP OF BLANK CARDS
+    $(target).html('<img src="img/'+hand.type+'of'+hand.suit+'.png" class="card" />');
+      if( player == 'user' ) {
+        userScore += hand.value;
+      }
+      else {
+       computerScore += hand.value;
+      }
+    }
+}
+
+function displayResult() {
+  var result = 'Your score is '+userScore+' and Computer&#39;s score is '+computerScore;
+  var winner = (userScore > computerScore) ? 'You are' : 'Computer is';
+  var startAgain = '<input type="button" value="Start again" class="btn btn-info" onClick="location.reload();" /><br />';
   
-//Result
-var result;
-if( myHand.value > compHand.value ) {
-  result = 'You win!';
-}  
-else if( myHand.value === compHand.value ) {
-  result = 'It is a draw.';
+  $('#result').html('<h2>'+result+'</h2>');
+  if( userScore == computerScore ) { $('#result').append('It is a tie!<br />'+startAgain); }
+  else { $('#result').append('<h2>'+winner+' the winner this time!</h2><br />'+startAgain); }
 }
-else {
-  result = 'Comp wins.';
-}
-$('#result').html('<p><h2>'+result+'</h2></p>');
