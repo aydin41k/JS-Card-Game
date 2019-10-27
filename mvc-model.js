@@ -2,8 +2,8 @@ var userScore = 0;
 var computerScore = 0;
 
 var suit = ['hearts','diamonds','clubs','spades'];
-var type = ['2','3','4','5','6','7','8','9','10','jack','king','ace'];
-var value = [2,3,4,5,6,7,8,9,10,11,13,14];
+var type = ['2','3','4','5','6','7','8','9','10','jack','queen','king','ace'];
+var value = [2,3,4,5,6,7,8,9,10,11,12,13,14];
 
 var cardTypeCount = type.length;
 var randCache;
