@@ -11,6 +11,7 @@
       Card Game
     </title>
   </head>
+  
   <body>
     <div class="container">
       <div class="jumbotron text-center">
@@ -22,7 +23,7 @@
           <div class="col-sm-4 col-sm-offset-2">
             <label for="cardCount" class="control-label">How many cards do you want to deal?</label>
           </div>
-  			  <div class="col-sm-2">
+          <div class="col-sm-2">
             <select class="form-control" id="cardCount">
               <option>1</option>
               <option>2</option>
@@ -30,22 +31,20 @@
               <option selected>4</option>
             </select>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-1 col-sm-offset-2">
+          <div class="col-sm-1">
             <input id="startButton" type="button" class="btn btn-success" value="Start" onClick="start();">
           </div>
         </div>
       </form>
+      <div class="col-sm-12 text-center handContainer">
+        <h2>Your hand</h2>
+      </div>
       <div id="userCards" class="row">
-        <div class="col-sm-12 text-center handContainer">
-          <h2>Your hand</h2>
-        </div>
+      </div>
+      <div class="col-sm-12 text-center handContainer">
+        <h2>Computer&#39;s hand</h2>
       </div>
       <div id="computerCards" class="row">
-        <div class="col-sm-12 text-center handContainer">
-          <h2>Computer&#39;s hand</h2>
-        </div>
       </div>
       <div id="result" class="row text-center">
       </div>
@@ -54,7 +53,7 @@
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#howItWorks">
         How it works?
       </button>
-
+  
       <!-- Modal -->
       <div class="modal fade" id="howItWorks" tabindex="-1" role="dialog" aria-labelledby="howItWorksLabel">
         <div class="modal-dialog" role="document">
@@ -91,9 +90,9 @@
         </div>
       </div>
     </div>
-    
-    
-    
+  
+  
+  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
@@ -101,4 +100,4 @@
     <script type="text/javascript" src="mvc-view.js"></script>
     <script type="text/javascript" src="mvc-controller.js"></script>
   </body>
-</html>
+  </html>
