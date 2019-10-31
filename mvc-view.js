@@ -17,6 +17,10 @@ function start() {
   distribute('computer',cardLimit);
   
   displayResult();
+  countRound();
+  if(scoreHidden < 1){
+    showScores()
+  }
 }
 
 function dealBlank(player,cardLimit,colOffset) {
@@ -38,6 +42,7 @@ function distribute(player,cardLimit) {
     } else {
       computerScore += hand.value;
     }
+    totalScore(player, hand.value)
   }
 }
 
