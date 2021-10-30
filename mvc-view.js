@@ -16,7 +16,7 @@ function start() {
   distribute('user',cardLimit);
   distribute('computer',cardLimit);
   
-  displayResult();
+//  displayResult();
   countRound();
   if(scoreHidden < 1){
     showScores()
@@ -31,20 +31,19 @@ function dealBlank(player,cardLimit,colOffset) {
     }
 }
 
-function distribute(player,cardLimit) {
-  for(i=1;i<=cardLimit;i++) {
+async function distribute(player,cardLimit) {
+  for(let i=1;i<=cardLimit;i++) {
+    await(delay(1000));
     var hand = new deal();
     target = '#'+player+'Card'+i;
-    // INSERT CODE TO DELAY DEALING ON TOP OF BLANK CARDS
     $(target).html('<img src="img/'+hand.type+'of'+hand.suit+'.png" class="card" />');
-    if( player == 'user' ) {
-      userScore += hand.value;
-    } else {
-      computerScore += hand.value;
-    }
+    updateScore(player, hand.value);
     totalScore(player, hand.value)
   }
+  displayResult();
 }
+
+const delay = (delay) => new Promise((resolve) => setTimeout(resolve, delay));
 
 function displayResult() {
   var result = 'Your score is '+userScore+' and Computer&#39;s score is '+computerScore;
@@ -56,4 +55,8 @@ function displayResult() {
   } else { 
     $('#result').append('<h2>'+winner+' the winner this time!</h2><br />'); 
   }
+}
+
+function updateScore(player, value) {
+  eval(player + 'Score += ' + value);
 }
