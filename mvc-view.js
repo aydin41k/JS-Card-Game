@@ -55,6 +55,7 @@ function displayResult() {
   } else { 
     $('#result').append('<h2>'+winner+' the winner this time!</h2><br />'); 
   }
+  clearTakenSuite();
 }
 
 function updateScore(player, value) {
